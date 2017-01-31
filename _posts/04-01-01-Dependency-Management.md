@@ -1,17 +1,19 @@
 ---
+title: Správa závislostí
 anchor: dependency_management
 ---
 
-# Dependency Management {#dependency_management_title}
+# Správa závislostí {#dependency_management_title}
 
-There are a ton of PHP libraries, frameworks, and components to choose from. Your project will likely use 
-several of them — these are project dependencies. Until recently, PHP did not have a good way to manage
-these project dependencies. Even if you managed them manually, you still had to worry about autoloaders.
-That is no longer an issue.
+Je nespočetné množstvo PHP knižníc, framework-ov a komponentov, z ktorých sa dá vyberať. Váš projekt bude veľmi
+pravdepodobne používať niekoľko z nich - tieto sa nazývajú závislosti. PHP až donedávna nemalo dobrý spôsob, ako
+tieto závislosti projektu spravovať. Dokonca aj keď tieto závislosti boli spravované manuálne, ešte stále ste sa museli
+obávať autoloader-ov. Toto však už viac nie je problém.
 
-Currently there are two major package management systems for PHP - [Composer] and [PEAR]. Composer is currently
-the most popular package manager for PHP, however for a long time PEAR was the primary package manager in use.
-Knowing PEAR's history is a good idea, since you may still find references to it even if you never use it.
+V súčasnosti sú dostupné dva majoritné systémy pre správu závislostí - [Composer] a [PEAR]. Composer je momentálne
+najpopulárnejší správca balíčkov pre PHP, i keď po dlhú dobu bol pre správu primárne používaný PEAR. Vedieť niečo
+o histórií PEAR, i keď ho nikdy nebudete používať, je však ešte stále dobrý nápad, nakoľko môžete stále natrafiť
+na jeho referencie.
 
 [Composer]: /#composer_and_packagist
 [PEAR]: /#pear
