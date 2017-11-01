@@ -1,17 +1,18 @@
 ---
+title: Komunita
 anchor: community
 ---
 
-# Community {#community_title}
+# Komunita {#community_title}
 
-The PHP community is as diverse as it is large, and its members are ready and willing to support new PHP programmers.
-Consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best
-practices shown here. You can hang out on IRC in the #phpc channel on [irc.freenode.com][php-irc] and follow the
-[@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics, and above all, make new
-friends! Other community resources include the Google+ PHP [Programmer community][php-programmers-gplus] and
-[StackOverflow][php-so].
+PHP komunita je veľká a rozmanitá. Jej členovia ochotne podporujú nových programátorov. Aby ste sa naučili viac
+o postupoch z tejto knihy, zvážte pripojenie k miestnej skupine PHP užívateľov, alebo návštevu PHP konferencií. 
+Pre komunikáciu je dostupný IRC kanál #phpc na [irc.freenode.com][php-irc] a tiež Twitter účet [@phpc][phpc-twitter].
+Vďaka týmto informačným kanálom môžete spoznať nových programátorov, naučiť sa o nových témach a nájsť si nových
+kamarátov. Ďalšie informačné kanály sú Google+ PHP [Programmer community][php-programmers-gplus]
+a [StackOverflow][php-so].
 
-[Read the Official PHP Events Calendar][php-calendar]
+[Kalendár s oficiálnymi PHP udalosťami][php-calendar]
 
 
 [php-irc]: http://webchat.freenode.net/?channels=phpc
