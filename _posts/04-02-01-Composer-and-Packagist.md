@@ -3,138 +3,106 @@ isChild: true
 anchor:  composer_and_packagist
 ---
 
-## Composer and Packagist {#composer_and_packagist_title}
+## Composer a Packagist {#composer_and_packagist_title}
 
-Composer is a **brilliant** dependency manager for PHP. List your project's dependencies in a `composer.json` file and,
-with a few simple commands, Composer will automatically download your project's dependencies and setup autoloading for
-you. Composer is analogous to NPM in the node.js world, or Bundler in the Ruby world.
+Composer je **geniálny** správca závislostí pre PHP. Vymenúva závislosti vášho projektu v súbore `composer.json` a s niekoľkými jednoduchými príkazmi za vás dokáže stiahnuť projektové závislosti a nastaviť samozavádzanie. Composer je analogický ku NPM vo svete node.js alebo analogický ku Bundler vo svete Ruby.
 
-There are already a lot of PHP libraries that are compatible with Composer, ready to be used in your project. These
-"packages" are listed on [Packagist], the official repository for Composer-compatible PHP libraries.
+Dnes existuje už mnoho PHP knižníc, ktoré sú kompatibilné s Composerom a teda sú pripravené pre použitie vo vašom projekte. Tieto „balíčky“ sú uvedené v oficiálnom repozitári [Packagist] pre Composer-kompatibilné PHP knižnice.
 
-### How to Install Composer
+### Ako nainštalovať Composer
 
-You can install Composer locally (in your current working directory) or globally (e.g. /usr/local/bin, recommended).
-Let's assume you want to install Composer globally:
+Composer je možné nainštalovať lokálne (vo vašom aktuálnom pracovnom adresári) alebo globálne (napr. /usr/local/bin - odporúčané).
+Predpokladajme, že chcete nainštalovať Composer globálne:
 
 {% highlight console %}
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 {% endhighlight %}
 
-**Note:** If the above fails due to permissions, run the `mv` line again with `sudo`.
+**Poznámka:** Ak vyššie uvedené riadky zlyhajú kvôli právam, opätovne spustite riadok `mv` začínajúci so `sudo`.
 
-This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project
-dependencies.
+Vyššie uvedené riadky stiahnu `composer.phar` (PHP binárny archív). Pre správu vašich závislostí ho môžete spúšťať s `php`.
 
-**Please Note:** If you pipe downloaded code directly into an interpreter, please read the
-code online first to confirm it is safe.
+**Bezpečnostná poznámka:** Ak chcete vložiť uvedený kód priamo do interpretera, najprv si ho tu prečítajte aby ste sa presvedčili, že je bezpečný.
 
-#### Installing on Windows
+#### Inštalácia na systéme Windows
 
-For Windows users the easiest way to get up and running is to use the [ComposerSetup] installer, which
-performs a global install and sets up your `$PATH` so that you can just call `composer` from any
-directory in your command line.
+Ak ste používateľ systému Windows tak najjednoduchším spôsobom inštalácie je využitie inštalátora [ComposerSetup], ktorý vykoná globálnu inštaláciu a nastaví `$PATH` takým spôsobom, že budete môcť zavolať `composer` z akéhokoľvek adresára vo vašom príkazovom riadku.
 
-### How to Install Composer (manually)
+### Ako nainštalovať Composer (manuálne)
 
-Manually installing Composer is an advanced technique; however, there are various reasons why a 
-developer might prefer this method vs. using the interactive installation routine. The interactive
-installation checks your PHP installation to ensure that:
+Manuálna inštalácia Composer je pokročilá technika. Napriek tomu, existujú rôzne dôvody prečo by vývojár uprednostnil túto metódu voči použitiu interaktívnej inštalačnej rutiny. Interaktívna inštalácia kontroluje vašu PHP inštaláciu aby sa presvedčila, že:
 
-- a sufficient version of PHP is being used
-- `.phar` files can be executed correctly
-- certain directory permissions are sufficient
-- certain problematic extensions are not loaded
-- certain `php.ini` settings are set
+- používa sa dostatočná veria PHP
+- `.phar` súbory sú spúšťané správne
+- oprávnenia určitých adresárov sú dostatočné
+- určité problematické rozšírenia nie sú povolené
+- určité nastavenia (`php.ini`) sú nastavené 
 
-Since a manual installation performs none of these checks, you have to decide whether the trade-off is 
-worth it for you. As such, below is how to obtain Composer manually:
+Keďže manuálna inštalácia nevykonáva žiadne kontroly, musíte sa rozhodnúť či tento kompromis je pre vás výhodný. Nižšie je uvedené ako je možné získať Composer manuálne:
 
 {% highlight console %}
 curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
 chmod +x $HOME/local/bin/composer
 {% endhighlight %}
 
-The path `$HOME/local/bin` (or a directory of your choice) should be in your `$PATH` environment 
-variable. This will result in a `composer` command being available.
+Cesta `$HOME/local/bin` (alebo adresár vášho výberu) by mala byť uvedená vo vašej premennej prostredia `$PATH`. Toto vyústi do dostupnosti príkazu `composer`.
 
-When you come across documentation that states to run Composer as `php composer.phar install`, you can
-substitute that with:
+Keď natrafíte v dokumentácii na príkaz `php composer.phar install`, môžete namiesto neho použiť aj príkaz:
 
 {% highlight console %}
 composer install
 {% endhighlight %}
 
-This section will assume you have installed composer globally.
+Táto sekcia predpokladá, že ste nainštalovali Composer globálne.
 
-### How to Define and Install Dependencies
+### Ako definovať a nainštalovať závislosti
 
-Composer keeps track of your project's dependencies in a file called `composer.json`. You can manage it
-by hand if you like, or use Composer itself. The `composer require` command adds a project dependency 
-and if you don't have a `composer.json` file, one will be created. Here's an example that adds [Twig]
-as a dependency of your project.
+Composer udržuje zoznam projektových závislostí v súbore `composer.json`. Tento súbor môžete upravovať ručne alebo využívať priamo Composer. Príkaz `composer require` pridáva projektovú závislosť a ak súbor `composer.json` neexistuje, vytvorí ho. Tu je príklad, ktorý pridáva [Twig] ako závislosť vášho projektu:
 
 {% highlight console %}
 composer require twig/twig:~1.8
 {% endhighlight %}
 
-Alternatively the `composer init` command will guide you through creating a full `composer.json` file
-for your project. Either way, once you've created your `composer.json` file you can tell Composer to
-download and install your dependencies into the `vendor/` directory. This also applies to projects 
-you've downloaded that already provide a `composer.json` file:
+Alternatívne, príkaz `composer init` vás bude sprevádzať vytvorením celého súboru `composer.json` pre váš projekt. V každom prípade, keď už raz vytvoríte súbor `composer.json`, môžete povedať Composer-u aby stiahol a nainštaloval vaše závislosti do adresára `vendor/`. Toto platí aj pre projekty, ktoré ste stiahli a už obsahujú súbor `composer.json`:
 
 {% highlight console %}
 composer install
 {% endhighlight %}
 
-Next, add this line to your application's primary PHP file; this will tell PHP to use Composer's 
-autoloader for your project dependencies.
+Ďalej, pridajte tento riadok do primárneho PHP súboru vašej aplikácie - toto povie PHP, aby použil Composer samozavádzanie pre vaše projektové závislosti:
 
 {% highlight php %}
 <?php
 require 'vendor/autoload.php';
 {% endhighlight %}
 
-Now you can use your project dependencies, and they'll be autoloaded on demand.
+Teraz môžete používať vaše projektové závislosti - budú automaticky načítané na vyžiadanie.
 
-### Updating your dependencies
+### Aktualizácia vašich závislostí
 
-Composer creates a file called `composer.lock` which stores the exact version of each package it
-downloaded when you
-first ran `composer install`. If you share your project with other coders and the `composer.lock` file
-is part of your distribution, when they run `composer install` they'll get the same versions as you. 
-To update your dependencies, run `composer update`.
+Composer vytvára súbor zvaný `composer.lock`, ktorý obsahuje informáciu o presnej verzii každého balíka, ktorý bol stiahnutý keď ste prvý krát spustili príkaz `composer install`. Ak zdielate váš projekt s ostatnými programátormi a súbor `composer.lock` je súčasťou vašej distribúcie, tak keď títo programátori spustia príkaz `composer install`, dostanú rovnaké verzie balíkov ako vy. 
+Pre aktualizovanie vašich závislostí spustite príkaz `composer update`.
 
-This is most useful when you define your version requirements flexibly. For instance a version 
-requirement of `~1.8` means "anything newer than `1.8.0`, but less than `2.0.x-dev`". You can also use 
-the `*` wildcard as in `1.8.*`. Now Composer's `composer update` command will upgrade all your
-dependencies to the newest version that fits the restrictions you define.
+Toto je najviac užitočné, keď definujete vaše flexibilné požiadavky na verzie. Napríklad, požiadavka na verziu `~1.8` znamená „čokoľvek novšie ako `1.8.0` ale staršie ako `2.0.x-dev`“. Taktiež môžete využiť náhradný znak `*`, teda `1.8.*`. Príkaz `composer update` teraz zaktualizuje všetky vaše závislosti na najnovšiu verziu ktorá spĺňa definované obmedzenia. 
 
-### Update Notifications
+### Aktualizácia notifikácii
 
-To receive notifications about new version releases you can sign up for [VersionEye], a web service
-that can monitor your GitHub and BitBucket accounts for `composer.json` files and send emails with new
-package releases.
+Pre prijímanie notifikácii o vydaniach nových verzií sa môžete registrovať na [VersionEye], webovej službe, ktorá monitoruje a kontroluje `composer.json` vo vašom GitHub a BitBucket účte a pri vydaní novšej verzie balíka posiela emailové notifikácie. 
 
-### Checking your dependencies for security issues
+### Kontrolovanie vašich závislostí pre bezpečnostné problémy
 
-The [Security Advisories Checker] is a web service and a command-line tool, both will examine your `composer.lock`
-file and tell you if you need to update any of your dependencies.
+[Security Advisories Checker] je webová služba a nástroj príkazového riadka - obe vyšetria váš súbor `composer.lock` a povedia vám či potrebujete aktualizovať nejakú z vašich závislostí.
 
-### Handling global dependencies with Composer
+### Zaobchádzanie s globálnymi závislosťami
 
-Composer can also handle global dependencies and their binaries. Usage is straight-forward, all you need
-to do is prefix your command with `global`. If for example you wanted to install PHPUnit and have it 
-available globally, you'd run the following command:
+Composer môže taktiež spracovávať globálne závislosti a ich binárne súbory. Použitie je priame - všetko čo potrebujete je pridať slovo `global`. Napríklad, ak by ste chceli nainštalovať balík PHPUnit a mať ho dostupný globálne, spustili by ste tento príkaz:
 
 {% highlight console %}
 composer global require phpunit/phpunit
 {% endhighlight %}
 
-This will create a `~/.composer` folder where your global dependencies reside. To have the installed
-packages' binaries available everywhere, you'd then add the `~/.composer/vendor/bin` folder to your 
-`$PATH` variable.
+Toto vytvorí adresár `~/.composer`, kde budú sídliť vaše globálne závislosti. Aby boli vaše nainštalované balíky dostupné všade, musíte ešte pridať cestu `~/.composer/vendor/bin` do premennej `$PATH`.
 
 * [Learn about Composer]
 
