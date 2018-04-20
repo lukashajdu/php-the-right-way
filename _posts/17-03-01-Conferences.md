@@ -1,7 +1,7 @@
 ---
 title: PHP konferencie
 isChild: true
-anchor:  conferences
+anchor: conferences
 ---
 
 ## PHP konferencie {#conferences_title}
