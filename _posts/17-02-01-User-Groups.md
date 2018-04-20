@@ -3,20 +3,21 @@ isChild: true
 anchor:  user_groups
 ---
 
-## PHP User Groups {#user_groups_title}
+## Užívateľské skupiny PHP {#user_groups_title}
 
-If you live in a larger city, odds are there's a PHP user group nearby. You can easily find your local PUG at
-the [usergroup-list at php.net][php-uglist] which is based upon [PHP.ug][php-ug]. Alternate sources might be
-[Meetup.com][meetup] or a search for ```php user group near me``` using your favourite search engine
-(i.e. [Google][google]). If you live in a smaller town, there may not be a local PUG; if that's the case, start one!
+Ak bývate vo väčšom meste, je dosť možné, že máte na blízku užívateľskú skupinu. Užívateľské skupiny môžete nájsť
+v [zozname na php.net][php-uglist], ktorý sa zakladá na [PHP.ug][php-ug]. Alternatívnym zdrojom je stránka
+[Meetup.com][meetup], alebo na vyhľadanie použite váš obľúbený vyhľadávač (napr. [Google][google]). Na Slovensku
+môžete navštíviť pravidelné stretnutia webových vývojárov v Bratislave, alebo Prešove. Viac info nájdete
+na stránke [WebElement][webelement].
 
-Special mention should be made of two global user groups: [NomadPHP] and [PHPWomen]. [NomadPHP] offers twice monthly
-online user group meetings with presentations by some of the top speakers in the PHP community.
-[PHPWomen] is a non-exclusive user group originally targeted towards the women in the PHP world. Membership is open to
-everyone who supports a more diverse community. PHPWomen provide a network for support, mentorship and education, and
-generally promote the creating of a "female friendly" and professional atmosphere.
+Osobitná zmienka by sa mala uviesť o dvoch globálnych užívateľských skupinách [NomadPHP] a [PHPWomen]. [NomadPHP]
+poskytuje online stretnutie dva krát mesačne s prezentáciou od niektorých z top rečníkov v PHP komunite.  
+[PHPWomen] je nevýhradná užívateľská skupina pôvodne zameraná na ženy v PHP svete. Členstvo je otvorené
+pre každého, kto podporuje rôznorodejšiu komunitu. PHPWomen poskytuje sieť pre podporu, mentoring a vzdelávanie,
+a generálne podporuje vytváranie profesionálnej atmosféry priateľskej k ženám.
 
-[Read about User Groups on the PHP Wiki][php-wiki]
+[O užívateľských skupinách si môžete prečítať na PHP Wiki][php-wiki]
 
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: http://www.meetup.com/find/
@@ -25,3 +26,4 @@ generally promote the creating of a "female friendly" and professional atmospher
 [PHPWomen]: http://phpwomen.org/
 [php-wiki]: https://wiki.php.net/usergroups
 [php-uglist]: http://php.net/ug.php
+[webelement]: https://www.webelement.sk/
