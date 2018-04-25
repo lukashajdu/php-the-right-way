@@ -1,4 +1,5 @@
 ---
+title: Správa závislostí
 anchor: dependency_management
 ---
 
